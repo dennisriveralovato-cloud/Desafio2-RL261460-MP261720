@@ -8,5 +8,11 @@ Integrantes:
 El sistema está implemenado en C# en donde se encuentran los 2 ejercicios:
 
 1-El juego del ahorcado:  Permite al usuario adivinar una palabra seleccionada aleatoriamente, mostrando el progreso y controlando intentos.
-2-Sistema de registro de notas: Permite ingresar estudiantes, calcular promedios, determinar aprobados/reprobados y mostrar reportes.
+2-Sistema de registro de notas: Permite ingresar estudiantes, calcular promedios y mostrar aprobados y reprobados.
+
+Recursos usados:
+-C#
+-.NET
+-Visual Studio Code
+
 
