@@ -5,7 +5,7 @@ Integrantes:
 - Dennis Rivera RL261460
 - Cristian Marquéz MP261720
 
-El sistema está implemenado en C# en donde se encuentran los 2 ejercicios:
+El sistema está implementado en C# en donde se encuentran los 2 ejercicios:
 
 1-El juego del ahorcado:  Permite al usuario adivinar una palabra seleccionada aleatoriamente, mostrando el progreso y controlando intentos.
 2-Sistema de registro de notas: Permite ingresar estudiantes, calcular promedios y mostrar aprobados y reprobados.
