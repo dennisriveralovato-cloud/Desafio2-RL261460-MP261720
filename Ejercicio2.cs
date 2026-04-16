@@ -63,6 +63,7 @@ namespace Desafío#2_Ejercicio2
             }
         }
 
+        // Función para calcular el promedio del grupo
         static double CalcularPromedio(double[] notas)
         {
             double suma = 0;
@@ -77,6 +78,7 @@ namespace Desafío#2_Ejercicio2
             return suma / notas.Length;
         }
 
+        // Función para obtener la nota más alta
         static double ObtenerMayor(double[] notas)
         {
             double mayor = notas[0];
@@ -93,6 +95,7 @@ namespace Desafío#2_Ejercicio2
             return mayor;
         }
 
+        // Función para obtener la nota más baja
         static double ObtenerMenor(double[] notas)
         {
             double menor = notas[0];
