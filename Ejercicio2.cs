@@ -129,7 +129,7 @@ namespace Desafío#2_Ejercicio2
             int aprobados = 0;
             int reprobados = 0;
 
-            Console.WriteLine("\n- REPORTE FINAL DE ESTUDIANTES -");
+            Console.WriteLine("\n===== REPORTE FINAL DE ESTUDIANTES =====");
 
             // Recorre los estudiantes para mostrar su información
             for (int i = 0; i < nombres.Length; i++)
@@ -149,7 +149,7 @@ namespace Desafío#2_Ejercicio2
                     reprobados++;
                 }
 
-                Console.WriteLine(nombres[i] + " - " + notas[i] + " - " + letra + " - " + estado);
+                Console.WriteLine("Nombre: " + nombres[i] + " | Nota: " + notas[i] + " | Letra: " + letra + " | Estado: " + estado);
             }
 
             // Resumen final
