@@ -19,7 +19,7 @@ namespace Desafío#2_Ejercicio2
             Console.Clear();
 
             // Solicita la cantidad de estudiantes
-            Console.Write("Ingrese la cantidad de estudiantes: ");
+            Console.Write("Ingrese la cantidad de estudiantes a registrar: ");
             int n = int.Parse(Console.ReadLine());
 
             // Arreglos paralelos para almacenar nombres y notas
@@ -51,7 +51,7 @@ namespace Desafío#2_Ejercicio2
                 // Validación de la nota (debe estar entre 0 y 10)
                 do
                 {
-                    Console.Write("Nota (0 - 10): ");
+                    Console.Write("Ingrese la nota (0 - 10): ");
                     notas[i] = double.Parse(Console.ReadLine());
 
                     if (notas[i] < 0 || notas[i] > 10)
