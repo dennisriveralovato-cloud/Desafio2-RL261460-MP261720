@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Sistema de registro de notas estudiantiles
 namespace Desafío#2_Ejercicio2 
 {
   internal class Program 
