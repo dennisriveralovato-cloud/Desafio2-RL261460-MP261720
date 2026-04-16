@@ -206,3 +206,73 @@ namespace Desafio2_Ejercicio1_Ahorcado
             Console.WriteLine("Presione Enter para continuar...");
             Console.ReadLine();
         }
+        ///<summary>
+        //Dibuja el ahorcado según los intentos fallidos
+        // Usa estructuras de control para mostrar el dibujo progresivo
+        ///</summary>
+        static void DibujarAhorcado(int fallos)
+        {
+            Console.WriteLine("  +---+");
+            Console.WriteLine("  |   |");
+
+            // Etapa 0: vacío
+            if (fallos == 0)
+            {
+                Console.WriteLine("      |");
+                Console.WriteLine("      |");
+                Console.WriteLine("      |");
+                Console.WriteLine("      |");
+            }
+            // Etapa 1: cabeza
+            else if (fallos == 1)
+            {
+                Console.WriteLine("  O   |");
+                Console.WriteLine("      |");
+                Console.WriteLine("      |");
+                Console.WriteLine("      |");
+            }
+            // Etapa 2: cabeza + cuerpo
+            else if (fallos == 2)
+            {
+                Console.WriteLine("  O   |");
+                Console.WriteLine("  |   |");
+                Console.WriteLine("      |");
+                Console.WriteLine("      |");
+            }
+            // Etapa 3: cabeza + cuerpo + brazo izquierdo
+            else if (fallos == 3)
+            {
+                Console.WriteLine("  O   |");
+                Console.WriteLine(" /|   |");
+                Console.WriteLine("      |");
+                Console.WriteLine("      |");
+            }
+            // Etapa 4: cabeza + cuerpo + ambos brazos
+            else if (fallos == 4)
+            {
+                Console.WriteLine("  O   |");
+                Console.WriteLine(" /|\\  |");
+                Console.WriteLine("      |");
+                Console.WriteLine("      |");
+            }
+            // Etapa 5: cabeza + cuerpo + brazos + pierna izquierda
+            else if (fallos == 5)
+            {
+                Console.WriteLine("  O   |");
+                Console.WriteLine(" /|\\  |");
+                Console.WriteLine(" /    |");
+                Console.WriteLine("      |");
+            }
+            // Etapa 6: ahorcado completo
+            else
+            {
+                Console.WriteLine("  O   |");
+                Console.WriteLine(" /|\\  |");
+                Console.WriteLine(" / \\  |");
+                Console.WriteLine("      |");
+            }
+
+            Console.WriteLine(" =======");
+        }
+    }
+}
