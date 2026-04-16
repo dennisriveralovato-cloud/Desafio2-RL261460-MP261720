@@ -84,3 +84,125 @@ namespace Desafio2_Ejercicio1_Ahorcado
             Console.WriteLine("Presione Enter para volver al menú...");
             Console.ReadLine();
         }
+        ///<summary>
+        /// Función principal del juego del Ahorcado
+        ///</summary>
+        static void JugarAhorcado()
+        {
+            // Banco de 10 palabras
+            string[] bancoPalabras = 
+            {
+                "AHORCADO", "PROGRAMA", "VECTOR",   "FUNCION", 
+                "CONSOLA",  "ALGORITMO", "ESTRUCTURA", "VALIDAR",
+                "INTENTOS", "DIBUJO"
+            };
+
+            Random random = new Random();
+            bool jugarDeNuevo = true;
+
+            while (jugarDeNuevo)
+            {
+                // Selección automática de 1 palabra 
+                string palabraSecreta = bancoPalabras[random.Next(bancoPalabras.Length)].ToUpper();
+
+                // Vector unidimensional para mostrar el estado de la palabra
+                char[] palabraMostrada = new char[palabraSecreta.Length];
+                for (int i = 0; i < palabraMostrada.Length; i++)
+                {
+                    palabraMostrada[i] = '_';
+                }
+
+                List<char> letrasUsadas = new List<char>(); // Para mostrar letras ya ingresadas
+                int intentosFallidos = 0;
+                const int MAX_INTENTOS = 6;
+                bool haGanado = false;
+
+                // Bucle principal del juego
+                while (intentosFallidos < MAX_INTENTOS && !haGanado)
+                {
+                    Console.Clear();
+
+                    // Mostrar dibujo del ahorcado actualizado
+                    DibujarAhorcado(intentosFallidos);
+
+                    // Mostrar estado de la palabra con guiones
+                    Console.WriteLine("\nPalabra: " + new string(palabraMostrada));
+
+                    // Mostrar letras ya ingresadas
+                    Console.WriteLine("Letras usadas: " + (letrasUsadas.Count > 0 ? string.Join(", ", letrasUsadas) : "Ninguna"));
+
+                    // Mostrar intentos restantes
+                    Console.WriteLine($"Intentos restantes: {MAX_INTENTOS - intentosFallidos}/6");
+
+                    Console.Write("\nIngresa una letra: ");
+                    string entrada = Console.ReadLine()?.Trim().ToUpper() ?? "";
+
+                    // Validación: letra válida y no usada antes
+                    if (entrada.Length != 1 || !char.IsLetter(entrada[0]))
+                    {
+                        Console.WriteLine("ERROR: Debe ingresar una sola letra del alfabeto (A-Z).");
+                        Console.WriteLine("Presione Enter para continuar...");
+                        Console.ReadLine();
+                        continue;
+                    }
+
+                    char letra = entrada[0];
+
+                    if (letrasUsadas.Contains(letra))
+                    {
+                        Console.WriteLine("ERROR: Esa letra ya fue usada anteriormente.");
+                        Console.WriteLine("Presione Enter para continuar...");
+                        Console.ReadLine();
+                        continue;
+                    }
+
+                    // Registrar la letra usada
+                    letrasUsadas.Add(letra);
+
+                    // Verificar si la letra está en la palabra
+                    bool acierto = false;
+                    for (int i = 0; i < palabraSecreta.Length; i++)
+                    {
+                        if (palabraSecreta[i] == letra)
+                        {
+                            palabraMostrada[i] = letra;
+                            acierto = true;
+                        }
+                    }
+
+                    if (!acierto)
+                    {
+                        intentosFallidos++;
+                    }
+
+                    // Verificar si ganó
+                    haGanado = !new string(palabraMostrada).Contains("_");
+                }
+
+                // Mostrar resultado final
+                Console.Clear();
+                DibujarAhorcado(intentosFallidos);
+                Console.WriteLine("\nPalabra: " + new string(palabraMostrada));
+
+                if (haGanado)
+                {
+                    Console.WriteLine("\n¡FELICIDADES! ¡Has ganado!");
+                }
+                else
+                {
+                    Console.WriteLine("\n¡LO SENTIMOS! Has perdido.");
+                    Console.WriteLine($"La palabra secreta era: {palabraSecreta}");
+                }
+
+                Console.WriteLine("Letras usadas: " + string.Join(", ", letrasUsadas));
+
+                // Preguntar si quiere jugar de nuevo
+                Console.Write("\n¿Quieres jugar de nuevo? (si/no): ");
+                string respuesta = Console.ReadLine()?.Trim().ToLower() ?? "";
+                jugarDeNuevo = (respuesta == "si");
+            }
+
+            Console.WriteLine("\nVolviendo al menú principal...");
+            Console.WriteLine("Presione Enter para continuar...");
+            Console.ReadLine();
+        }
