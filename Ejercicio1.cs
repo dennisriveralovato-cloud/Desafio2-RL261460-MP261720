@@ -34,3 +34,31 @@ namespace Desafio2_Ejercicio1_Ahorcado
                 }
             }
         }
+        ///<summary>
+        /// Muestra el menú principal del juego
+        ///</summary>
+        static void MostrarMenuPrincipal()
+        {
+            Console.Clear();
+            Console.WriteLine("====================================");
+            Console.WriteLine("     JUEGO DEL AHORCADO");
+            Console.WriteLine("====================================");
+            Console.WriteLine("1. Jugar");
+            Console.WriteLine("2. Ver instrucciones");
+            Console.WriteLine("3. Salir");
+            Console.WriteLine("====================================");
+            Console.Write("Seleccione una opción (1-3): ");
+        }
+
+        ///<summary>
+        /// Lee y valida la opción del menú principal
+        ///</summary>
+        static int LeerOpcionMenu()
+        {
+            string input = Console.ReadLine()?.Trim() ?? "";
+            if (int.TryParse(input, out int opcion) && opcion >= 1 && opcion <= 3)
+            {
+                return opcion;
+            }
+            return 0;
+        }
