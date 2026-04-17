@@ -11,13 +11,6 @@ namespace Desafío#2_Ejercicio2
   {
     static void Main(string[] args) 
     {
-            // Configuración de la consola (tamaño y colores)
-            Console.WindowHeight = 40;
-            Console.WindowWidth = 80;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.Clear();
-
             // Solicita la cantidad de estudiantes
             Console.Write("Ingrese la cantidad de estudiantes a registrar: ");
             int n = int.Parse(Console.ReadLine());
