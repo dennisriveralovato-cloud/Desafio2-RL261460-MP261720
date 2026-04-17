@@ -3,7 +3,7 @@ Proyecto en C# desarrollado para el Desafío 2 de la materia Programación de Al
 
 Integrantes:
 - Dennis Rivera RL261460
-- Cristian Marquéz MP261720
+- Cristian Márquez MP261720
 
 El sistema está implementado en C# en donde se encuentran los 2 ejercicios:
 
